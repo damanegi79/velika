@@ -16,12 +16,12 @@
 $(".rotator > div:gt(0)").hide();
 setInterval(function() { 
   $('.rotator > div:first')
-    .fadeOut(1000)
+    .fadeOut(4000)
     .next()
-    .fadeIn(1000)
+    .fadeIn(4000)
     .end()
     .appendTo('.rotator');
-},  4000);
+},  5000);
 
 
 	
@@ -145,7 +145,10 @@ $(document).ready(function() {
   $("#owl-demo").owlCarousel({
  
       navigation : false, 
-      singleItem:true
+      singleItem:true,
+      autoPlay:6000,
+      transitionStyle: "fade",
+      addClassActive: true,
   });
  
 });	
