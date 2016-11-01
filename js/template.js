@@ -184,17 +184,21 @@ $(document).ready(function() {
  
 });	
 	
-
-jQuery('a.gallery-colorbox').colorbox();
+//
+//jQuery('a.gallery-colorbox').colorbox(
+//
+//);
+//	
+//	
+//$(document).ready(function(){
+//    $(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390});
+//    $(".vimeo").colorbox({iframe:true, innerWidth:500, innerHeight:409});
+//    $(".iframe").colorbox({iframe:true, width:"100%", height:"100%", transition:"fade"});
+//});	
 	
-	
-			$(document).ready(function(){
-				$(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390});
-				$(".vimeo").colorbox({iframe:true, innerWidth:500, innerHeight:409});
-				$(".iframe").colorbox({iframe:true, width:"100%", height:"100%", transition:"fade"});
-			});	
-	
-	
+$(document).ready(function() {
+		$(".fancybox").fancybox();
+	});	
 	
 	
 	
@@ -292,6 +296,43 @@ $(document).ready(function() {
 });
 	
 
-	
+function initialize() {
+    /*
+        http://openapi.map.naver.com/api/geocode.php?key=f32441ebcd3cc9de474f8081df1e54e3&encoding=euc-kr&coord=LatLng&query=서울특별시 강남구 강남대로 456
+        위의 링크에서 뒤에 주소를 적으면 x,y 값을 구할수 있습니다.
+    */
+    var Y_point			= 37.4885180;		// Y 좌표
+    var X_point			= 126.9971806;		// X 좌표
+    var zoomLevel		= 18;						// 지도의 확대 레벨 : 숫자가 클수록 확대정도가 큼
+    var markerTitle		= "벨리카";				// 현재 위치 마커에 마우스를 오버을때 나타나는 정보
 
+    var myLatlng = new google.maps.LatLng(Y_point, X_point);
+    var mapOptions = {
+        zoom: zoomLevel,
+        center: myLatlng,
+        scrollwheel: false,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    }
+    var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+
+    var marker = new google.maps.Marker({
+        position: myLatlng,
+        map: map,
+        title: markerTitle
+    });
+
+    var infowindow = new google.maps.InfoWindow({
+        maxWidth: markerMaxWidth
+    });
+
+    google.maps.event.addListener(marker, 'click', function() {
+        infowindow.open(map, marker);
+    });
+ 
+}
+	
+$(document).ready(function() {
+  initialize();
+    alert('adasd')
+});
 	
