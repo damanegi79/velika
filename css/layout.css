@@ -4,35 +4,8 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans&subset=latin,cyrillic-ext,greek-ext,greek,vietnamese,latin-ext,cyrillic);
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,700,700i');
 @import url(http://fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
 
-
-* {-webkit-text-size-adjust:none; margin:0; padding:0;}
-html, body{height: 100%; width: 100%; color: #fff;}
-html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, address, big, cite, code, del, dfn, em, font, img, ins, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, textarea, input, select, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary, audio, canvas, video {margin:0; padding:0; line-height:140%; }
-ol, ul {list-style:none;}
-abbr[title] {border-bottom: 1px dotted; }
-img, fieldset {border:0;}
-img{vertical-align:middle;}
-hr{-moz-box-sizing: content-box; box-sizing: content-box; height: 0; display:none;}
-legend{width:0; height:0; line-height:0; position:absolute; top:-10000px; left:-10000px; overflow:hidden; visibility:hidden;}
-object {outline:none;}
-mark {background: #ff0; color: #000;}
-code, kbd, pre, samp {font-family:inherit; font-size: 1em;}
-pre {white-space: pre-wrap;}
-q {quotes: "\201C" "\201D" "\2018" "\2019";}
-small {font-size: 80%;}
-svg:not(:root) {overflow: hidden;}
-figure {margin: 0;}
-fieldset {padding: 0; border: 0; margin: 0;}
-legend {border: 0; padding: 0;}
-
-/* Form Controls */
-button, input[type=text],input[type=password], select, textarea {border-radius:0; vertical-align:middle; }
-textarea {border:0 none; resize: none;}
-input:-moz-placeholder,textarea:-moz-placeholder {color: #ababab;}
-input::-moz-placeholder,textarea::-moz-placeholder {color: #ababab;}
-input:-ms-input-placeholder,textarea:-ms-input-placeholder {color: #ababab;}
-input::-webkit-input-placeholder,textarea::-webkit-input-placeholder {color: #ababab;}
 
 /* #PAGE STYLES */
 
@@ -599,11 +572,11 @@ h1,h2,h3,h4,h5{font-family:'Playfair Display', sans-serif; text-transform: none;
 -ms-transform: rotate(0deg) scale(1) skew(0) translate(0);
 }
 #owl-demo .owl-item.active .border-wrap img{
-transform: rotate(3deg) scale(1.1) skew(0deg) translate(0px);
--webkit-transform: rotate(3deg) scale(1.1) skew(0deg) translate(0px);
--moz-transform: rotate(3deg) scale(1.1) skew(0deg) translate(0px);
--o-transform: rotate(3deg) scale(1.1) skew(0deg) translate(0px);
--ms-transform: rotate(3deg) scale(1.1) skew(0deg) translate(0px);
+transform: rotate(3deg) scale(1.2) skew(0deg) translate(0px);
+-webkit-transform: rotate(3deg) scale(1.2) skew(0deg) translate(0px);
+-moz-transform: rotate(3deg) scale(1.2) skew(0deg) translate(0px);
+-o-transform: rotate(3deg) scale(1.2) skew(0deg) translate(0px);
+-ms-transform: rotate(3deg) scale(1.2) skew(0deg) translate(0px);
 }
 .process h5{
 	padding-top:180px;
@@ -1249,30 +1222,44 @@ iframe{
 /* #Footer
 ================================================== */
 
-
 .footer {
 	position:relative;
 	width: 100%;
-	padding-bottom:20px;
+    font-family: 'Nanum Gothic', sans-serif;
+    background-color: #eaba48;
+    margin-top: 50px;
+    padding-top: 30px;
+    text-align: left; font-size: 14px;
+    padding-bottom: 30px;
+text-transform: uppercase;
 }
+
+.footer .logo {color: #fff; font-size: 30px; font-family:'Playfair Display', 'Nanum Myeongjo', serif; font-style: italic;}
+.footer .logo img{ width: 130px;}
+.footer .company_info{margin-top: 20px;}
+.footer .company_info .space{color: #fff; display: inline-block; margin-right: 20px;}
+.footer .company_info .copy{font-size: 12px;}
+.footer .call{font-size: 30px; font-weight: 700;}
 .footer h6 {
-	text-align:center;
-	padding-bottom:20px;
+	padding-bottom:10px;
+    text-align: left;
+    font-size: 15px;
+    color: #fff;
 }
 .footer p {
-	text-align:center;
-	color:#000;
+	color:#fff;
 	padding-bottom:8px;
-	font-size: .9em;
+	font-size:12px;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-weight: 100;
+    line-height: 120%;
 }
+.footer p a{color: #fff;}
 .footer p span{
-	color:rgba(60,60,60,.7);
 }
 .footer .icon-footer {
 	font-family: 'FontAwesome';
-	font-size: 14px;
 	padding-right:10px;
-	color:#000;
 }
 .border-right-footer{
 	border-right:1px dashed rgba(60,60,60,.3);
@@ -1338,6 +1325,8 @@ iframe{
 .footer .footer-bottom p{
 	text-align:center;
     font-weight: 400;
+    font-family:'loto' ;
+    font-size: 12px;
 }
 
 
@@ -1356,7 +1345,6 @@ h1 { font-size: 38px; line-height:38px;}
 	width:140px;
 	margin-left:-70px;
 	top:20px;
-	height:47px;
 }
 .link-to-right{
 	display:none;
