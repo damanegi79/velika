@@ -1230,16 +1230,17 @@ iframe{
     margin-top: 50px;
     padding-top: 30px;
     text-align: left; font-size: 14px;
-    padding-bottom: 30px;
+    padding-bottom: 10px;
 text-transform: uppercase;
 }
 
 .footer .logo {color: #fff; font-size: 30px; font-family:'Playfair Display', 'Nanum Myeongjo', serif; font-style: italic;}
-.footer .logo img{ width: 130px;}
-.footer .company_info{margin-top: 20px;}
+.footer .logo img{ width: 150px;}
+.footer .company_info{margin-top: 10px;}
 .footer .company_info .space{color: #fff; display: inline-block; margin-right: 20px;}
 .footer .company_info .copy{font-size: 12px;}
 .footer .call{font-size: 30px; font-weight: 700;}
+.footer .sns{margin-top: 10px;}
 .footer h6 {
 	padding-bottom:10px;
     text-align: left;
