@@ -125,7 +125,9 @@ article .cnt{
 	        box-shadow: 0 8px 6px -6px rgba(0,0,0,.04);
 }
 
-
+#menu-wrap .sound{display: block; position: absolute; right: 20px; bottom: 15px; font-weight: 100;}
+#menu-wrap .sound button{background: none; border: none; cursor: pointer; color: #cdc66a;font-family: 'Open Sans', sans-serif;}
+#menu-wrap .sound button span{font-family: 'FontAwesome'; content:"&#xf026"; }
 
 .logo a{
 	position:absolute;
@@ -161,9 +163,8 @@ article .cnt{
 .collapse-button {
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: 60%;
 	margin-left:-20px;
-    width: 40px;
     color: #000;
     box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1) inset, 0 1px 0 rgba(255, 255, 255, 0.075);
     padding: 7px 10px;
@@ -1392,6 +1393,7 @@ h1 { font-size: 38px; line-height:38px;}
 #menu-wrap{
     padding-top:70px;
 }
+
 .footer .logo {
 	
 	 text-align: center;
