@@ -334,7 +334,6 @@ h1,h2,h3,h4,h5{font-family:'Playfair Display', sans-serif; text-transform: none;
 	min-height: 100%;
 	width: auto;
 	height: auto;
-	z-index: -1000;
 	overflow: hidden;
 }
 
@@ -364,7 +363,7 @@ h1,h2,h3,h4,h5{font-family:'Playfair Display', sans-serif; text-transform: none;
 
 .slidecontent h1{
 	text-shadow: 0 0 25px rgba(0,0,0,0.6);
-	font-size: 70px;
+	font-size: 100px;
 	margin-top:20px;
 	padding: 0;
 	color:#fff;
@@ -375,13 +374,13 @@ h1,h2,h3,h4,h5{font-family:'Playfair Display', sans-serif; text-transform: none;
 }
 
 .slidecontent .headersur{
-	font-size: 18px;
+	font-size: 24px;
 	text-transform:uppercase;
 	text-shadow: 0 0 10px rgba(0,0,0,0.5);
 	font-family:'Playfair Display', sans-serif;
 	color: #fff;
 	display: block;
-	font-weight:400; margin-top: 10px;
+	font-weight:400; margin-top: 30px;
 }
 
 
@@ -1590,6 +1589,20 @@ h1 { font-size: 38px; line-height:38px;}
 	text-align:center;
 }
 }
+
+
+
+/* 개발 추가 */
+
+.main_visual{position:relative;width:100%;height:100%;}
+.main_visual .visual_img{position:absolute;top:0;left:0;width:100%;height:100%}
+.main_visual .visual_img .img_con{display:block;width:100%;height:100%}
+.main_visual .visual_img.visual1 .img_con{background:url(/assets/images/main/main_bg1.jpg) no-repeat center;background-size:cover}
+.main_visual .visual_img.visual2 .img_con{background:url(/assets/images/main/main_bg2.jpg) no-repeat center;background-size:cover}
+.main_visual .visual_img.visual3 .img_con{background:url(/assets/images/main/main_bg3.jpg) no-repeat center;background-size:cover}
+.main_visual .visual_img.visual4 .img_con{background:url(/assets/images/main/main_bg4.jpg) no-repeat center;background-size:cover}
+.main_visual .visual_img.visual5 .img_con{background:url(/assets/images/main/main_bg5.jpg) no-repeat center;background-size:cover}
+.main_visual .visual_img.visual6 .img_con{background:url(/assets/images/main/main_bg6.jpg) no-repeat center;background-size:cover}
 
 
 

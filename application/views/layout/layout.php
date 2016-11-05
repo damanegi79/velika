@@ -48,29 +48,29 @@
 	<div id="menu-wrap">
 		<ul class="slimmenu">
 			<li> 
-				<a href="javascript:velike.gotoPage('home');">home</a>
+				<a href="javascript:velika.gotoPage('home');">home</a>
 			</li>
 			<li>
-				<a href="javascript:velike.gotoPage('about');">about</a>
+				<a href="javascript:velika.gotoPage('about');">about</a>
 			</li>
 			<li> 
-				<a href="javascript:velike.gotoPage('services');">services</a>
+				<a href="javascript:velika.gotoPage('services');">services</a>
 			</li>
 			<li>
-				<a href="javascript:velike.gotoPage('gallery1');">gallery1</a>
+				<a href="javascript:velika.gotoPage('gallery1');">gallery1</a>
 			</li>
 			<li>
-				<a href="javascript:velike.gotoPage('gallery2');">gallery2</a>
+				<a href="javascript:velika.gotoPage('gallery2');">gallery2</a>
 			</li>
 			<li>
-				<a href="javascript:velike.gotoPage('contact');">contact</a>
+				<a href="javascript:velika.gotoPage('contact');">contact</a>
 			</li>
 			<li>
-				<a href="javascript:velike.gotoPage('contact');">q&ampa</a>
+				<a href="javascript:velika.gotoPage('qna');">q&ampa</a>
 			</li>
 		</ul>
 	</div>	
-    <div class="logo"><a href="javascript:velike.gotoPage('home');"></a></div>
+    <div class="logo"><a href="javascript:velika.gotoPage('home');"></a></div>
 	
 
 
@@ -97,6 +97,10 @@
 <script type="text/javascript" src="/assets/js/owl.carousel.js"></script>		
 <script type="text/javascript" src="/assets/js/jquery.fancybox.js"></script>		
 <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+<script type="text/javascript" src="/assets/js/greensock/TweenMax.min.js"></script>
+<script type="text/javascript" src="/assets/js/greensock/plugins/CSSPlugin.min.js"></script>
+
+
 <script type="text/javascript" src="/assets/js/contact.js"></script>
 <script type="text/javascript" src="/assets/js/template.js"></script>
 <script type="text/javascript" src="/assets/js/app.js"></script>  	  
