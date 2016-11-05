@@ -35,7 +35,8 @@
         
         function initSound()
         {
-            console.log("사운드 작업");
+           
+
         }
 
 

@@ -84,7 +84,10 @@
 
 
 	
-	
+<audio id="bgmSound" autoplay="autoplay" loop="loop">
+  <source src="/assets/sound/bgm.ogg" type="audio/ogg">
+  <source src="/assets/sound/bgm.mp3" type="audio/mpeg">
+</audio>
 	
 <!-- JAVASCRIPT
 ================================================== -->
