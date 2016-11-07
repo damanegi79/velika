@@ -125,7 +125,9 @@ article .cnt{
 	        box-shadow: 0 8px 6px -6px rgba(0,0,0,.04);
 }
 
-
+#menu-wrap .sound{display: block; position: absolute; right: 20px; bottom: 13px; font-weight: 100;}
+#menu-wrap .sound button{background: none; border: none; cursor: pointer; font-family: 'Open Sans', sans-serif;}
+#menu-wrap .sound button span{font-family: 'FontAwesome'; content:"&#xf026"; font-size: 14px; display: inline-block; margin-right: 5px;}
 
 .logo a{
 	position:absolute;
