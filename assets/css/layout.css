@@ -1660,8 +1660,9 @@ h1 { font-size: 38px; line-height:38px;}
 
 @media (max-width: 990px){
    .bbs-list li .no{display:none}
-   .bbs-list li .title{width:70%}
-   .bbs-list li .date{width:30%}
+   .bbs-list li .title{width:50%}
+   .bbs-list li .user{width:25%}
+   .bbs-list li .cmt{width:25%}
    .bbs-list li.list-header .title{text-align:left}
    .bbs-top{margin-top:20px}
 }
