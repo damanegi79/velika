@@ -1649,12 +1649,13 @@ h1 { font-size: 38px; line-height:38px;}
 .bbs-list li{width:100%;display:table}
 .bbs-list li span{border-bottom:solid 1px #d7d3d1;padding:20px 10px;min-height:62px;display:table-cell;vertical-align:middle}
 .bbs-list li .no{width:10%;text-align:center}
-.bbs-list li .title{width:75%;padding-left:20px;text-align:left}
+.bbs-list li .title{width:70%;padding-left:20px;text-align:left}
 .bbs-list li .title a{color:#000}
 .bbs-list li .title a:hover{color:#cdc66a;text-decoration:underline}
 .bbs-list li.list-header{border-top:solid 1px #d7d3d1;color:#000;font-weight:bold;}
 .bbs-list li.list-header .title{text-align:center}
-.bbs-list li .date{width:15%;text-align:center}
+.bbs-list li .user{width:10%;text-align:center}
+.bbs-list li .cmt{width:10%;text-align:center}
 .bbs-top{margin-top:50px}
 
 @media (max-width: 990px){
