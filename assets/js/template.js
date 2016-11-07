@@ -195,12 +195,12 @@ $(document).ready(function() {
 //    $(".vimeo").colorbox({iframe:true, innerWidth:500, innerHeight:409});
 //    $(".iframe").colorbox({iframe:true, width:"100%", height:"100%", transition:"fade"});
 //});	
-	
+/*
 $(document).ready(function() {
 		$(".fancybox").fancybox();
 	});	
 	
-	
+*/	
 	
 $(document).ready(function() {
  

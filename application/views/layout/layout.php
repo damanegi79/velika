@@ -82,7 +82,19 @@
     </section>
 	
 
-
+<div id="gallery_layer">
+    <div id="gallery_overay">
+        <div id="gallery_wrap">
+            <h1>벨리카 돌상</h1>
+            <div class="gallery_contents">
+                <img src="/assets/images/gallery/1.jpg" alt="">
+                <img src="/assets/images/gallery/1.jpg" alt="">
+                <img src="/assets/images/gallery/1.jpg" alt="">
+            </div>
+        </div>
+    </div>   
+<p class="contents_close"><button id="cboxClose" onClick="velika.hideGalleryModal();">close</button></p>
+</div>
 	
 <audio id="bgmSound" autoplay="autoplay" loop="loop">
   <source src="/assets/sound/bgm.ogg" type="audio/ogg">
@@ -91,6 +103,7 @@
 	
 <!-- JAVASCRIPT
 ================================================== -->
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyBbRvJL0Ebd5nwYPqEASyXq-ksA4tkWJmM"></script>
 <script type="text/javascript" src="/assets/js/jquery.js"></script>
 <script type="text/javascript" src="/assets/js/modernizr.custom.js"></script>
 <script type="text/javascript" src="/assets/js/jquery.slimmenu.js"></script>
@@ -102,12 +115,10 @@
 <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
 <script type="text/javascript" src="/assets/js/greensock/TweenMax.min.js"></script>
 <script type="text/javascript" src="/assets/js/greensock/plugins/CSSPlugin.min.js"></script>
+<!--<script type="text/javascript" src="/assets/js/contact.js"></script>-->
+<!--<script type="text/javascript" src="/assets/js/template.js"></script>-->
 
-
-<script type="text/javascript" src="/assets/js/contact.js"></script>
-<script type="text/javascript" src="/assets/js/template.js"></script>
 <script type="text/javascript" src="/assets/js/app.js"></script>  	  
-<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
 </body>
 </html>
         
