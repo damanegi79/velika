@@ -74,16 +74,17 @@
 
             $('#home').css({'height':($(window).height())+'px'});
             $(window).resize(function(){
-                $('#home').css({'height':($(window).height())+'px'});
-
-                //Navigation		
-                $('ul.slimmenu').on('click',function(){
-                    var width = $(window).width(); 
-                    if ((width <= 800)){ 
-                        $(this).slideToggle(); 
-                    }	
-                });
+                $('#home').css({'height':($(window).height())+'px'});    
             });
+
+            //Navigation		
+            $('ul.slimmenu').on('click',function(){
+                var width = $(window).width(); 
+                if ((width <= 800)){ 
+                    $(this).slideToggle(); 
+                }	
+            });
+            
 
             $('ul.slimmenu').slimmenu(
             {

@@ -7,8 +7,8 @@ class Admin extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('user_model');
-		$this->load->model('video_model');
-		$this->load->model('main_model');
+		//$this->load->model('video_model');
+		//$this->load->model('main_model');
 		$this->load->helper(array('url', 'form', 'string', 'util'));
 		$this->load->library(array('form_validation', 'session'));
 		$this->user_id = $this->session->userdata('user_id');

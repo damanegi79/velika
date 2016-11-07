@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<title>DOORIBUN - 관리자</title>
+<title>VALIKA - 관리자</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
@@ -12,15 +12,11 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="blac">
 <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="/assets/css/admin.css" />
-<link rel="stylesheet" type="text/css" href="/assets/font-awesome/css/font-awesome.min.css" />
 <script type="text/javascript" src="/assets/js/jquery.js"></script>
-<script type="text/javascript" src="/assets/js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="/assets/js/jquery.easing.js"></script>
 <script type="text/javascript" src="/assets/js/jquery.placeholder.js"></script>
-<script type="text/javascript" src="/assets/js/greensock/TweenMax.min.js"></script>
-<script type="text/javascript" src="/assets/js/greensock/plugins/CSSPlugin.min.js"></script>
 <script type="text/javascript" src="/assets/js/modernizr-1.5.min.js"></script>
 <script type="text/javascript" src="/assets/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="/assets/js/common.js"></script>
 <script type="text/javascript">
 <?php if(isset($errorMsg)):?>
 alert("<?=$errorMsg?>");
@@ -32,7 +28,7 @@ window.history.back();
     <div id="wrapr" style="text-align:center">
     	<div class="row">
 			<div class="col-md-12 center login-header">
-				<h1>DOORIBUN 로그인</h1>
+				<h1>VALIKA 로그인</h1>
 			</div>
 		</div>
         <div class="row">
