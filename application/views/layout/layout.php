@@ -66,7 +66,7 @@
 				<a href="javascript:velika.gotoPage('contact');">contact</a>
 			</li>
 			<li>
-				<a href="javascript:velika.gotoPage('qna');">q&amp;ampa</a>
+				<a href="javascript:velika.gotoPage('qna');">q&amp;a</a>
 			</li>
 		</ul>
 		<p class="sound"><button><span>&#xf026;</span><span>&#xf028;</span> off </button></p>
