@@ -28,7 +28,7 @@ window.history.back();
     <div id="wrapr" style="text-align:center">
     	<div class="row">
 			<div class="col-md-12 center login-header">
-				<h1>VALIKA 로그인</h1>
+				<h1>VELIKA 로그인</h1>
 			</div>
 		</div>
         <div class="row">

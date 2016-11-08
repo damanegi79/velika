@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<title>DOORIBUN - 관리자</title>
+<title>VELIKA - 관리자</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
@@ -18,7 +18,9 @@
 <script type="text/javascript" src="/assets/js/greensock/TweenMax.min.js"></script>
 <script type="text/javascript" src="/assets/js/greensock/plugins/CSSPlugin.min.js"></script>
 <script type="text/javascript" src="/assets/js/modernizr-1.5.min.js"></script>
-<script type="text/javascript" src="/assets/js/bootstrap.js"></script>
+<script type="text/javascript" src="/assets/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/external/ckeditor/ckeditor.js"></script>
+
 <style>
 .al{text-align:left }
 .ac{text-align:center }
@@ -64,7 +66,7 @@ form{display:inline}
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/admin">DOORIBUN 관리자</a>
+                <a class="navbar-brand" href="/admin">VELIKA 관리자</a>
             </div>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
@@ -83,11 +85,11 @@ form{display:inline}
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
-                    <li <?Php if($this->uri->segment(2)=="main"){ echo 'class="active"';}?>>
-                        <a href="/admin/main">메인페이지 관리</a>
+                    <li <?Php if(strpos($this->uri->segment(2), "gallery") !== false){ echo 'class="active"';}?>>
+                        <a href="/admin/gallery">GALLERY 관리</a>
                     </li>
-                    <li <?Php if($this->uri->segment(2)=="video"){ echo 'class="active"';}?>>
-                        <a href="/admin/video">VIDEO 관리</a>
+                    <li <?Php if(strpos($this->uri->segment(2), "qna") !== false){ echo 'class="active"';}?>>
+                        <a href="/admin/qna">Q&amp;A 관리</a>
                     </li>
                 </ul>
             </div>

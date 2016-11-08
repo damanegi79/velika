@@ -7,6 +7,7 @@ class Admin extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('user_model');
+		$this->load->model('gallery_model');
 		//$this->load->model('video_model');
 		//$this->load->model('main_model');
 		$this->load->helper(array('url', 'form', 'string', 'util'));
@@ -42,7 +43,7 @@ class Admin extends CI_Controller {
 		if($loginRst == TRUE)
 		{
 			$this->session->set_userdata('user_id' , $reqLoginId);
-			redirect('admin/main');
+			redirect('admin/gallery');
 		}
 		else
 		{
@@ -50,6 +51,77 @@ class Admin extends CI_Controller {
 			$this->load->view('admin/login_view', $data);
 		}
 	}
+
+
+	/*======================================================================
+	*	gallery
+	* ======================================================================*/
+	public function gallery()
+	{
+		if($this->user_id == NULL)   redirect('admin/login');
+
+		$page = 0;
+		if(isset($_GET['per_page']) && $_GET['per_page'] != "")  $page = $_GET['per_page'];
+
+		$cate = "";
+		if(isset($_GET['cate']) && $_GET['cate'] != "")	$cate = $_GET['cate'];
+
+		$low = $this->gallery_model->get_gallery_total($cate);
+
+		$gallery_list = $this->gallery_model->get_gallery_data($cate, 10, $page);
+
+
+		$data = array();
+		$data['cate'] = $cate;
+		$data['gallery_list'] = $gallery_list;
+		$data['pagination'] = get_pagination_link('/admin/gallery?cate='.$cate, $low); 
+		$data['page'] = $page;
+		$data['pageTotal'] = $low;
+		$this->load->admin_layout('gallery_view', $data);
+	}
+
+
+	public function gallery_write()
+	{
+		if($this->user_id == NULL)   redirect('admin/login');
+		
+		$data = array();
+		$this->load->admin_layout('gallery_write_view', $data);
+	}
+
+
+
+	/*======================================================================
+	*	upload
+	* ======================================================================*/
+	public function upload_edit()
+	{
+		if (isset ( $_FILES ) && isset ( $_FILES ['upload'] ))
+		{
+			$CKEditorFuncNum = $this->input->get('CKEditorFuncNum');
+			$config['upload_path'] = './uploads/editor/';
+			$config['encrypt_name'] = TRUE;
+			$config['allowed_types'] = 'gif|jpg|png|jpeg';
+			$this->load->library('upload', $config);
+			
+			if ( $this->upload->do_upload('upload'))
+			{
+				$data =$this->upload->data();
+				echo "<script type='text/javascript'>window.parent.CKEDITOR.tools.callFunction('".$CKEditorFuncNum."', '/uploads/editor/".$data['file_name']."', '전송에 성공 했습니다')</script>";
+			}
+			else 
+			{
+				echo "<script>alert('업로드에 실패 했습니다.')</script>";
+			}
+			
+			return;
+		}
+		echo "<script>alert('첨부파일이 없습니다.')</script>";
+	}
+
+
+
+	
 
 
 
