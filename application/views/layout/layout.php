@@ -69,7 +69,10 @@
 				<a href="javascript:velika.gotoPage('qna');">q&amp;a</a>
 			</li>
 		</ul>
-		<p class="sound"><button><span>&#xf026;</span><span>&#xf028;</span> off </button></p>
+        <p class="sound">
+            <button class="on"><span>&#xf028;</span> sound on</button>
+            <button class="off"><span>&#xf026;</span> sound off</button>
+        </p>
 	</div>	
     <div class="logo"><a href="javascript:velika.gotoPage('home');"></a></div>
 	
@@ -96,12 +99,12 @@
     </div>   
 <p class="contents_close"><button id="cboxClose" onClick="velika.hideGalleryModal();">close</button></p>
 </div>
-	
-<audio id="bgmSound" autoplay="autoplay" loop="loop">
-  <source src="/assets/sound/bgm.ogg" type="audio/ogg">
-  <source src="/assets/sound/bgm.mp3" type="audio/mpeg">
-</audio>
-	
+<div id="audio_area">
+    <audio id="bgmSound" autoplay="autoplay" loop="loop">
+      <source src="/assets/sound/bgm.ogg" type="audio/ogg">
+      <source src="/assets/sound/bgm.mp3" type="audio/mpeg">
+    </audio>
+</div>		
 <!-- JAVASCRIPT
 ================================================== -->
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyBbRvJL0Ebd5nwYPqEASyXq-ksA4tkWJmM"></script>

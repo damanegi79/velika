@@ -55,8 +55,19 @@
         
         function initSound()
         {
-           
-
+            var savePlayer = $('#audio_area').html(); // Save player code
+            $(".sound button.on").on("click",function(){
+                $('#audio_area').html(savePlayer); // Restore it
+                $(this).hide();
+                $(".sound button.off").show();    
+                console.log('play')
+            })
+            $(".sound button.off").on("click",function(){
+                $('#bgmSound').remove(); // Remove player from DOM
+                $(this).hide();
+                $(".sound button.on").show();    
+                console.log('stop')
+            })
         }
 
 

@@ -127,8 +127,9 @@ article .cnt{
 }
 
 #menu-wrap .sound{display: block; position: absolute; right: 20px; bottom: 13px; font-weight: 100;}
-#menu-wrap .sound button{background: none; border: none; cursor: pointer; font-family: 'Open Sans', sans-serif;}
-#menu-wrap .sound button span{font-family: 'FontAwesome'; content:"&#xf026"; font-size: 14px; display: inline-block; margin-right: 5px;}
+#menu-wrap .sound button{background: none; border: none; cursor: pointer; font-family: 'Open Sans', sans-serif; display: block; opacity: 1 !important}
+#menu-wrap .sound button span{font-family: 'FontAwesome'; font-size: 14px; display: inline-block; margin-right: 5px; vertical-align: middle;}
+#menu-wrap .sound button.on{display: none;}
 
 .logo a{
 	position:absolute;
