@@ -22,97 +22,19 @@
 		</div>
 	</div>
 	<div id="portfolio">		
-		<ul class="portfolio-wrap">
-			<li class="portfolio-box  over_scale">	
-				<a class='fancybox' rel="gallery1" href="javascript:velika.showGalleryModal();" title="">
-					<div class="folio-mask1"></div> 
-					<div class="folio-mask2"></div> 
-					<img  src="/assets/images/gallery/1.jpg" alt="" />	
-					<h6>title area</h6> 	
-					<p><span>Subtitle text</span></p> 	
-				</a>	
-			</li>
-			<li class="portfolio-box over_scale">	
-				<a class='fancybox' rel="gallery1" href="javascript:velika.showGalleryModal();" title="">
-					<div class="folio-mask1"></div> 
-					<div class="folio-mask2"></div> 
-					<img  src="/assets/images/gallery/2.jpg" alt="" />	
-					<h6>title area</h6>
-					<p><span>Subtitle text</span></p> 	
-				</a>		
-			</li>		
-			<li class="portfolio-box over_scale">	
-				<a class='fancybox' rel="gallery1" href="javascript:velika.showGalleryModal();" title="">
-					<div class="folio-mask1"></div> 
-					<div class="folio-mask2"></div> 
-					<img  src="/assets/images/gallery/3.jpg" alt="" />
-					<h6>title area</h6>
-					<p><span>Subtitle text</span></p> 
-				</a>				
-			</li>	
-			<li class="portfolio-box over_scale">
-				<a class='fancybox' rel="gallery1" href="javascript:velika.showGalleryModal();" title="">
-					<div class="folio-mask1"></div> 
-					<div class="folio-mask2"></div> 
-					<img  src="/assets/images/gallery/10.jpg" alt="" />	
-					<h6>title area</h6>
-					<p><span>Subtitle text</span></p>
-				</a> 			
-			</li>	
-			<li class="portfolio-box over_scale">	
-				<a class='fancybox' rel="gallery1" href="javascript:velika.showGalleryModal();" title="">
-					<div class="folio-mask1"></div> 
-					<div class="folio-mask2"></div> 
-					<img  src="/assets/images/gallery/5.jpg" alt="" />
-					<h6>title area</h6>
-					<p><span>Subtitle text</span></p> 		
-				</a>			
-			</li>
-			<li class="portfolio-box over_scale">	
-				<a class='fancybox' rel="gallery1" href="javascript:velika.showGalleryModal();" title="">
-					<div class="folio-mask1"></div> 
-					<div class="folio-mask2"></div> 
-					<img  src="/assets/images/gallery/6.jpg" alt="" />
-					<h6>title area</h6>
-					<p><span>Subtitle text</span></p> 	
-				</a>			
-			</li>	
-			<li class="portfolio-box over_scale">
-				<a class='fancybox' rel="gallery1" href="javascript:velika.showGalleryModal();" title="">
-					<div class="folio-mask1"></div> 
-					<div class="folio-mask2"></div> 
-					<img  src="/assets/images/gallery/7.jpg" alt="" />	
-					<h6>title area</h6>
-					<p><span>Subtitle text</span></p> 
-				</a>			
-			</li>	
-			<li class="portfolio-box over_scale">
-				<a class='fancybox' rel="gallery1" href="javascript:velika.showGalleryModal();" title="">
-					<div class="folio-mask1"></div> 
-					<div class="folio-mask2"></div> 
-					<img  src="/assets/images/gallery/8.jpg" alt="" />	
-					<h6>title area</h6>
-					<p><span>Subtitle text</span></p> 
-				</a>			
-			</li>	
-			<li class="portfolio-box over_scale">
-				<a class='fancybox' rel="gallery1" href="javascript:velika.showGalleryModal();" title="">
-					<div class="folio-mask1"></div> 
-					<div class="folio-mask2"></div> 
-					<img  src="/assets/images/gallery/9.jpg" alt="" />	
-					<h6>title area</h6>
-					<p><span>Subtitle text</span></p> 
-				</a>			
-			</li>	
-			<li class="portfolio-box over_scale">
-				<a class='fancybox' rel="gallery1" href="javascript:velika.showGalleryModal();" title="">
-					<div class="folio-mask1"></div> 
-					<div class="folio-mask2"></div> 
-					<img  src="/assets/images/gallery/8.jpg" alt="" />	
-					<h6>title area</h6>
-					<p><span>Subtitle text</span></p> 
-				</a>			
-			</li>	
+		<ul class="portfolio-wrap" id="galleryList">
+			<script id="galleryListTemp" type="text/x-jquery-tmpl">
+				<li class="portfolio-box  over_scale" data-id="${id}">
+					<a  class='fancybox' rel="gallery1" href="javascript:velika.showGalleryModal(${id});" title="">
+						<div class="folio-mask1"></div> 
+						<div class="folio-mask2"></div> 
+						<img  src="${thumbPath}" alt="${title}" />	
+						<h6>${title}</h6> 	
+						<p><span>${subTitle}</span></p> 	
+					</a>
+				</li>
+			</script>	
 		</ul>
+		<a class="more_btn" href="javascript:">더보기</a>
 	</div>
 </article>

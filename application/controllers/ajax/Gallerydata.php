@@ -1,16 +1,16 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class VideoData extends CI_Controller {
+class GalleryData extends CI_Controller {
 
     function __construct()
 	{
 		parent::__construct();
         $this->load->helper('util');
-        $this->load->model('video_model');
+        $this->load->model('gallery_model');
 	}
     
-	public function index($page = 1, $category = 'all', $listNum = 12, $search ="")
+	public function index($page = 1, $category = '1', $listNum = 8)
 	{
        
         
@@ -21,12 +21,8 @@ class VideoData extends CI_Controller {
         
         if(empty($_GET['category']) == false && $_GET['category'] != "")
         {
-            if($_GET['category'] === 'travel' || 
-            $_GET['category'] === 'entertainment' || 
-            $_GET['category'] === 'music' ||
-            $_GET['category'] === 'interaction' ||
-            $_GET['category'] === 'sports' ||
-            $_GET['category'] === 'drama')
+            if($_GET['category'] === '1' || 
+            $_GET['category'] === '2')
             {
                 $category = $_GET["category"];   
             }
@@ -37,19 +33,14 @@ class VideoData extends CI_Controller {
             $listNum = $_GET["listNum"];
         }
         
-        if(empty($_GET['search']) == false && $_GET['search'] != "")
-        {
-            $search = $_GET["search"];
-        }
-        
         
         $end = $listNum * ($page-1);
         
-        $videoData = $this->video_model->get_video_data($category, $listNum, $end, $search);    
+        $galleryData = $this->gallery_model->get_gallery_data($category, $listNum, $end);    
         
         header('Content-Type: application/json');
         
-        $total = $this->video_model->get_video_total($category, $search);
+        $total = $this->gallery_model->get_gallery_total($category);
         $totalPage = ceil($total/$listNum);
         
         if($page >= $totalPage) 
@@ -58,11 +49,13 @@ class VideoData extends CI_Controller {
         }
         else
         {
-            $next = "/ajax/videodata?page=".($page+1);    
+            $next = "/ajax/gallerydata?page=".($page+1);    
         }
         
-        $data["videoData"] = array("total" => $total, "next" => $next, "category" => $category, 'items' => $videoData);
+        $data["galleryData"] = array("total" => $total, "next" => $next, "category" => $category, 'items' => $galleryData);
         
         echo json_encode($data);
 	}
+
+    
 }

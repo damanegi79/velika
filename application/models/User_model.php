@@ -10,7 +10,7 @@ Class User_model extends CI_Model
 	
 	function get_users_id( $id, $pass )
 	{	
-		$sql = "SELECT * FROM userData WHERE userId='".$id."' AND password='".$pass."'";
+		$sql = "SELECT * FROM userData WHERE userId='".$id."' AND userPassword='".md5($pass)."'";
 		$query = $this->db->query($sql); 
 		return $query->result();
 	}

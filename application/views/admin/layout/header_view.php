@@ -88,9 +88,6 @@ form{display:inline}
                     <li <?Php if(strpos($this->uri->segment(2), "gallery") !== false){ echo 'class="active"';}?>>
                         <a href="/admin/gallery">GALLERY 관리</a>
                     </li>
-                    <li <?Php if(strpos($this->uri->segment(2), "qna") !== false){ echo 'class="active"';}?>>
-                        <a href="/admin/qna">Q&amp;A 관리</a>
-                    </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

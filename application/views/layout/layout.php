@@ -89,16 +89,14 @@
 <div id="gallery_layer">
     <div id="gallery_overay">
         <div id="gallery_wrap">
-            <h1>벨리카 돌상</h1>
-            <div class="gallery_contents">
-                <img src="/assets/images/gallery/1.jpg" alt="">
-                <img src="/assets/images/gallery/1.jpg" alt="">
-                <img src="/assets/images/gallery/1.jpg" alt="">
-            </div>
+            <h1></h1>
+            <div class="gallery_contents"></div>
         </div>
     </div>   
-<p class="contents_close"><button id="cboxClose" onClick="velika.hideGalleryModal();">close</button></p>
+	<p class="contents_close"><button id="cboxClose" onClick="velika.hideGalleryModal();">close</button></p>
 </div>
+
+
 <div id="audio_area">
     <audio id="bgmSound" autoplay="autoplay" loop="loop">
       <source src="/assets/sound/bgm.ogg" type="audio/ogg">
@@ -113,15 +111,15 @@
 <script type="text/javascript" src="/assets/js/jquery.slimmenu.js"></script>
 <script type="text/javascript" src="/assets/js/jquery.easing.js"></script> 
 <script type="text/javascript" src="/assets/js/jquery.transit.min.js"></script>
+<script type="text/javascript" src="/assets/js/jquery.tmpl.min.js"></script>
+<script type="text/javascript" src="/assets/js/imagesloaded.pkgd.min.js"></script>
+<script src="https://unpkg.com/masonry-layout@4.1/dist/masonry.pkgd.min.js"></script>
 <script type="text/javascript" src="/assets/js/touchSwipe.js"></script> 
 <script type="text/javascript" src="/assets/js/owl.carousel.js"></script>		
 <script type="text/javascript" src="/assets/js/jquery.fancybox.js"></script>		
 <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
 <script type="text/javascript" src="/assets/js/greensock/TweenMax.min.js"></script>
 <script type="text/javascript" src="/assets/js/greensock/plugins/CSSPlugin.min.js"></script>
-<!--<script type="text/javascript" src="/assets/js/contact.js"></script>-->
-<!--<script type="text/javascript" src="/assets/js/template.js"></script>-->
-
 <script type="text/javascript" src="/assets/js/app.js"></script>  	  
 </body>
 </html>

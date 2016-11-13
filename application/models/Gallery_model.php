@@ -10,7 +10,7 @@ Class Gallery_model extends CI_Model
     
     function get_gallery_total($c)
     {
-        if($c == "all")
+        if($c == "")
         {
             $rows = $this->db->get('galleryData')->num_rows();
         }
@@ -37,66 +37,54 @@ Class Gallery_model extends CI_Model
         return $query->result();
     }
     
-    function insert_video_data($date, $cate, $subCate, $title, $desc, $thumb, $videoPath2160, $videoPath1080, $videoPath720, $videoPath540, $videoPath480, $videoPath360 )
+    function insert_gallery_data($date, $cate,  $title, $subTitle, $desc, $thumb)
     {
-        $query = $this->db->get('videoData')->row();
-
-        $viewNum = $query->viewNum + 1;
-        $sql = "INSERT INTO videoData (date, category, subCategory, videoPath_2160, videoPath_1080, videoPath_720, videoPath_540, videoPath_480, videoPath_360, thumbPath, videoTitle, decsribe, viewNum)";
-        $sql .= "VALUES ('".$date."', '".$cate."', '".$subCate."', '".$videoPath2160."', '".$videoPath1080."', '".$videoPath720."', '".$videoPath540."', '".$videoPath480."', '".$videoPath360."', '".$thumb."', '".$title."', '".$desc."', '".$viewNum."')";
-        $query = $this->db->query($sql);
-        return $query;
-    }
-
-    function insert_game_data($date, $cate, $subCate, $title, $desc, $thumb, $gamePath)
-    {
-        $query = $this->db->get('videoData')->row();
-
-        $viewNum = $query->viewNum + 1;
-        $sql = "INSERT INTO videoData (date, category, subCategory, game_path, thumbPath, videoTitle, decsribe, viewNum)";
-        $sql .= "VALUES ('".$date."', '".$cate."', '".$subCate."', '".$gamePath."', '".$thumb."', '".$title."', '".$desc."', '".$viewNum."')";
-        $query = $this->db->query($sql);
-        return $query;
-    }
-    
-    function delete_video( $id )
-    {
-        return $this->db->where_in('id', $id)->delete('videoData');
-    }
-    
-    function add_view_count( $id, $count )
-    {
-       return $this->db->where_in('id', $id)->update('videoData', array('viewCount' => ($count+1))); 
-    }
-    
-    
-    function get_video_list_row( $id )
-    {
-        $sql = "SELECT * FROM videoData WHERE id='".$id."'";
-        $query = $this->db->query($sql);
-        return $query->row();
-    }
-    
-    function modify_video_data($id, $data)
-    {
-        return $this->db->where('id', $id)->update('videoData', $data);  
-    }
-
-    
-
-    function sort_video( $viewNum, $sort )
-    {
-        if($sort === 'up')
+        $this->db->select_max('viewNum');
+        $query = $this->db->get('galleryData');
+        if($query->num_rows()>0)
         {
-            $sql = "SELECT * FROM videoData WHERE (viewNum > ".$viewNum.") ORDER BY id LIMIT 1";
+            $viewNum = $query->row()->viewNum + 1;
         }
         else
         {
-            $sql = "SELECT * FROM videoData WHERE (viewNum < ".$viewNum.") ORDER BY id DESC LIMIT 1";
+            $viewNum = 1;
+        }
+        $sql = "INSERT INTO galleryData (category, title, subTitle, thumbPath, content, date, viewNum)";
+        $sql .= "VALUES ('".$cate."', '".$title."', '".$subTitle."', '".$thumb."', '".$desc."', '".$date."', '".$viewNum."')";
+        $query = $this->db->query($sql);
+        return $query;
+    }
+
+    function delete_gallery( $id )
+    {
+        return $this->db->where_in('id', $id)->delete('galleryData');
+    }
+
+
+    function sort_gallery( $viewNum, $sort )
+    {
+        if($sort === 'up')
+        {
+            $sql = "SELECT * FROM galleryData WHERE (viewNum > ".$viewNum.") ORDER BY id LIMIT 1";
+        }
+        else
+        {
+            $sql = "SELECT * FROM galleryData WHERE (viewNum < ".$viewNum.") ORDER BY id DESC LIMIT 1";
         }
         $query = $this->db->query($sql);
         return $query->row();
     }
-	
+
+    function modify_gallery_data($id, $data)
+    {
+        return $this->db->where('id', $id)->update('galleryData', $data);  
+    }
+
+    function get_gallery_list_row( $id )
+    {
+        $sql = "SELECT * FROM galleryData WHERE id='".$id."'";
+        $query = $this->db->query($sql);
+        return $query->row();
+    }
 	
 }

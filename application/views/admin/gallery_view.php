@@ -9,7 +9,7 @@ $(function ()
 	});
 });
 
-/*
+
 $(function ()
 {
 	$(".list_con input[type='checkbox']").bind("change", function ( e )
@@ -55,7 +55,7 @@ $(function ()
 		else
 		{
 			$("#sort_from").append('<input type="hidden" name="arrow" value="up">');
-			$("#sort_from").append('<input type="hidden" name="prev" value="/admin/video<?= '?cate='.$cate.'&per_page='.$page; ?>">');
+			$("#sort_from").append('<input type="hidden" name="prev" value="/admin/gallery<?= '?cate='.$cate.'&per_page='.$page; ?>">');
 
 			$(".list_con input[type='checkbox']").each( function ( i )
 			{
@@ -82,7 +82,7 @@ $(function ()
 		else
 		{
 			$("#sort_from").append('<input type="hidden" name="arrow" value="down">');
-			$("#sort_from").append('<input type="hidden" name="prev" value="/admin/video<?= '?cate='.$cate.'&per_page='.$page; ?>">');
+			$("#sort_from").append('<input type="hidden" name="prev" value="/admin/gallery<?= '?cate='.$cate.'&per_page='.$page; ?>">');
 			
 			$(".list_con input[type='checkbox']").each( function ( i )
 			{
@@ -96,7 +96,7 @@ $(function ()
 		}
 	});
 	
-});*/
+});
 
 </script>
 
@@ -118,7 +118,7 @@ $(function ()
 				<!-- //Page Heading -->
 				
 				 <div class="row" style="position:relative;">
-                	<div class="col-lg-8" style="margin:10px 0">
+                	<div class="col-lg-12" style="margin:10px 0">
                 	 	<a href="javascript:" id="delete_btn" class="btn btn-sm btn-danger" style="float:left;"type="button">삭제</a>
 						<a href="javascript:" id="sort_up_btn" class="btn btn-sm btn-warning ml10" style="float:left;"type="button">위로 이동</a>
 						<a href="javascript:" id="sort_down_btn" class="btn btn-sm btn-warning ml10" style="float:left;"type="button">아래로 이동</a>
@@ -130,9 +130,9 @@ $(function ()
 	                </div>
                 </div>
 				
-				<form id="delete_form" action="/admin/video_gallery" method="POST">
+				<form id="delete_form" action="/admin/gallery_delete" method="POST">
                 <div class="row text-center" style="position:relative;">
-                    <div class="col-lg-8">
+                    <div class="col-lg-12">
                         <div class="list_con">
                             <table class="table table-bordered table-hover">
                             	<colgroup>
@@ -141,7 +141,7 @@ $(function ()
                             		<col width="10%">
 									<col width="15%">
                             		<col width="">
-									<col width="12%">
+									<col width="15%">
                             	</colgroup>
                                 <thead>
                                     <tr>
@@ -179,11 +179,11 @@ $(function ()
 				
 				
 				<div class="row text-center" style="position:relative;">
-                	<div class="col-lg-8" <?php if($pagination ==""){ echo'style="height:80px"';}?>>
+                	<div class="col-lg-12" <?php if($pagination ==""){ echo'style="height:80px"';}?>>
 	                   <nav>
 	                    	<?= $pagination ?>
 					   </nav>
-					   <a href="/admin/gallery_write" style="position:absolute;right:20px;top:20px;" type="button" class="btn btn-primary">작성하기</a>
+					   <a href="/admin/gallery_write?<?='cate='.$cate ?>" style="position:absolute;right:20px;top:20px;" type="button" class="btn btn-primary">작성하기</a>
 				   </div>
                 </div>
                   
@@ -193,6 +193,6 @@ $(function ()
         </div>
         <!-- //page-wrapper -->
 
-		<form id="sort_from" action="/admin/video_sort" method="POST" style="display:none">
+		<form id="sort_from" action="/admin/gallery_sort" method="POST" style="display:none">
 
 		</form>

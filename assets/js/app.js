@@ -1,5 +1,6 @@
 (function ($){
 
+
     var velika = velika || function ()
     {
         var pageAr = ["home", "about", "services", "gallery1", "gallery2", "contact", "qna"];
@@ -60,16 +61,13 @@
                 $('#audio_area').html(savePlayer); // Restore it
                 $(this).hide();
                 $(".sound button.off").show();    
-                console.log('play')
             })
             $(".sound button.off").on("click",function(){
                 $('#bgmSound').remove(); // Remove player from DOM
                 $(this).hide();
                 $(".sound button.on").show();    
-                console.log('stop')
             })
         }
-
 
         $(function ()
         {
@@ -114,7 +112,7 @@
         $(window).load(function() {
             $("#status").fadeOut();
             $("#preloader").delay(350).fadeOut("slow");
-        }) 
+        });
 
 
 
@@ -129,13 +127,29 @@
 
             showGalleryModal : function ( id )
             {
-                $("#gallery_layer").show();
-                $("#gallery_overay").scrollTop(0);
-                TweenMax.to($("#gallery_overay"), 0, {y:$(window).height()});
-                TweenMax.to($("#gallery_overay"), 1, {y:0, ease:Expo.easeInOut});
-                TweenMax.to($("#gallery_layer .contents_close"), 0, {y:-200});
-                TweenMax.to($("#gallery_layer .contents_close"), 1, {delay:0.3, y:0, ease:Expo.easeInOut});
-                
+                $.ajax({
+                    type:"GET",
+                    url:"/ajax/gallerydetail?id="+id,
+                    success:function(data)
+                    {
+                        var item = data.galleryData.items;
+                        if(item)
+                        {
+                            $("#gallery_wrap").find("h1").html(item.title);
+                            $("#gallery_wrap").find(".gallery_contents").html(item.content);
+                            $("#gallery_layer").show();
+                            $("#gallery_overay").scrollTop(0);
+                            TweenMax.to($("#gallery_overay"), 0, {y:$(window).height()});
+                            TweenMax.to($("#gallery_overay"), 1, {y:0, ease:Expo.easeInOut});
+                            TweenMax.to($("#gallery_layer .contents_close"), 0, {y:-200});
+                            TweenMax.to($("#gallery_layer .contents_close"), 1, {delay:0.3, y:0, ease:Expo.easeInOut});
+                        }
+                        else
+                        {
+                            alert("게시물이 존재하지 않습니다.");
+                        }
+                    }
+                });
             },
             hideGalleryModal : function ()
             {
@@ -143,6 +157,104 @@
             }
         };
     };
+
+
+    var GalleryList = GalleryList || function (category)
+    {
+        var galleryData;
+        var listViewNum = 8;
+        var listPage = 1;
+        var listTotalPage;
+        var gridList;
+        var nextPath;
+        var currentCate;
+        var removeItems;
+        var isFirst = true;
+
+
+        function loadGalleryData(path)
+        {
+            $(".more_btn").hide();
+            $.ajax({
+                type:"GET",
+                url:path+"&category="+category+"&listNum="+listViewNum,
+                success:function(data)
+                {
+                    galleryData = data.galleryData;
+                    listTotalPage = Math.ceil(galleryData.total/listViewNum);
+                    nextPath = galleryData.next;
+                    currentCate = galleryData.category;
+
+                    if(galleryData.total == 0)
+                    {
+                        //데이터 없을 시 
+                    }
+                    else
+                    {
+                        if(isFirst)
+                        {
+                            gridList = $("#galleryList").masonry({itemSelector:".portfolio-box", transitionDuration:0});
+                            $(".more_btn").bind("click", function ( e )
+                            {
+                                if(listPage < listTotalPage)
+                                {
+                                    listPage++;
+                                    loadGalleryData(nextPath);
+                                }
+                            });
+                        }
+                        addGalleryList();
+                    }
+
+                    if(listPage >= listTotalPage)
+                    {
+                        $(".more_btn").hide();  
+                    }
+                    else
+                    {
+                        $(".more_btn").show();
+                    }
+                }
+            });
+        }
+
+        loadGalleryData("/ajax/gallerydata?page=1");
+
+        function addGalleryList()
+        {
+            var items = new Array();
+            for(var i = 0; i<listViewNum; i++)
+            {
+                if(i < galleryData.items.length)
+                {
+                    items.push({"id":galleryData.items[i].id,
+                            "date":galleryData.items[i].date,
+                            "category":galleryData.items[i].category,
+                            "title":galleryData.items[i].title,
+                            "subTitle":galleryData.items[i].subTitle,
+                            "thumbPath":galleryData.items[i].thumbPath
+                        });
+                }
+            } 
+
+            var itemTmpl = $("#galleryListTemp").tmpl(items);
+
+            $(itemTmpl).each(function (i)
+            {
+                gridList.append($(this)).masonry('appended', $(this));
+            });
+
+            gridList.imagesLoaded().progress( function() 
+            {
+                gridList.masonry({columnWidth:".portfolio-box"});
+            });
+        }
+
+        return{
+
+        };
+        
+    }
 
 
     // 홈 클래스
@@ -322,16 +434,18 @@
     // gallery1 클래스
     velika.gallery1 = (function ()
     {
+        var gallery;
+
         return {
 
             init : function ()
             {
-
+                gallery = new GalleryList(1);
             },
 
             dispos : function ()
             {
-                
+
             }
         }
     })();
@@ -343,12 +457,12 @@
 
             init : function ()
             {
-
+                gallery = new GalleryList(2);
             },
 
             dispos : function ()
             {
-                
+
             }
         }
     })();
@@ -406,6 +520,7 @@
     // qna 클래스
     velika.qna = (function ()
     {
+
         return {
 
             init : function ()
