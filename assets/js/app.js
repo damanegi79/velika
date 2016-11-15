@@ -41,9 +41,9 @@
                 {
                     var outPage = $("#content>article");
                     var arrow = getMotionArrow(url);
-                    TweenMax.to(outPage, 0.8, {x:-($(window).width()*0.3)*arrow, ease:Cubic.easeInOut, onComplete:motionEnd});
+                    TweenMax.to(outPage, 0.8, {x:-($(window).width()*0.3)*arrow, ease:Cubic.easeInOut, force3D:true, onComplete:motionEnd});
                     TweenMax.to(page, 0, {x:$(window).width()*arrow, opacity:0});
-                    TweenMax.to(page, 0.8, {x:0, opacity:1, ease:Cubic.easeInOut});
+                    TweenMax.to(page, 0.8, {x:0, opacity:1, force3D:true, ease:Cubic.easeInOut});
                     $("#content").append(page);
                     if(url != "home")
                     {
@@ -161,9 +161,9 @@
                             $("#gallery_layer").show();
                             $("#gallery_overay").scrollTop(0);
                             TweenMax.to($("#gallery_overay"), 0, {y:$(window).height()});
-                            TweenMax.to($("#gallery_overay"), 1, {y:0, ease:Expo.easeInOut});
+                            TweenMax.to($("#gallery_overay"), 1, {y:0, force3D:true, ease:Expo.easeInOut});
                             TweenMax.to($("#gallery_layer .contents_close"), 0, {y:-200});
-                            TweenMax.to($("#gallery_layer .contents_close"), 1, {delay:0.3, y:0, ease:Expo.easeInOut});
+                            TweenMax.to($("#gallery_layer .contents_close"), 1, {delay:0.3, y:0, force3D:true, ease:Expo.easeInOut});
                         }
                         else
                         {
@@ -312,27 +312,27 @@
             {
                 case "scaleDown" :
                     TweenMax.to(inTarget, 0, {scaleX:1.1, scaleY:1.1});  
-                    TweenMax.to(inTarget, 4.95, {scaleX:1, scaleY:1, onComplete:motionEnd});      
+                    TweenMax.to(inTarget, 4.95, {scaleX:1, scaleY:1, force3D:true, onComplete:motionEnd});      
                 break;
                 case "scaleUp" :
                     TweenMax.to(inTarget, 0, {scaleX:0.9, scaleY:0.9});  
-                    TweenMax.to(inTarget, 4.95, {scaleX:1, scaleY:1, onComplete:motionEnd});      
+                    TweenMax.to(inTarget, 4.95, {scaleX:1, scaleY:1, force3D:true, onComplete:motionEnd});      
                 break;
                 case "moveLeft" :
                     TweenMax.to(inTarget, 0, {x:-$(window).width()*0.1});  
-                    TweenMax.to(inTarget, 4.95, {x:0, onComplete:motionEnd});      
+                    TweenMax.to(inTarget, 4.95, {x:0, force3D:true, onComplete:motionEnd});      
                 break;
                 case "moveRight" :
                     TweenMax.to(inTarget, 0, {x:$(window).width()*0.1});  
-                    TweenMax.to(inTarget, 4.95, {x:0, onComplete:motionEnd});      
+                    TweenMax.to(inTarget, 4.95, {x:0, force3D:true, onComplete:motionEnd});      
                 break;
                 case "moveDown" :
                     TweenMax.to(inTarget, 0, {y:-$(window).height()*0.1});  
-                    TweenMax.to(inTarget, 4.95, {y:0, onComplete:motionEnd});      
+                    TweenMax.to(inTarget, 4.95, {y:0, force3D:true, onComplete:motionEnd});      
                 break;
                 case "moveUp" :
                     TweenMax.to(inTarget, 0, {y:$(window).height()*0.1});  
-                    TweenMax.to(inTarget, 4.95, {y:0, onComplete:motionEnd});      
+                    TweenMax.to(inTarget, 4.95, {y:0, force3D:true, onComplete:motionEnd});      
                 break;
             }
 
