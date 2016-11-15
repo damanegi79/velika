@@ -70,8 +70,8 @@
 			</li>
 		</ul>
         <p class="sound">
-            <button class="on"><span>&#xf028;</span> sound on</button>
-            <button class="off"><span>&#xf026;</span> sound off</button>
+            <button class="on"><span>&#xf028;</span> <em>sound on</em></button>
+            <button class="off"><span>&#xf026;</span> <em>sound off</em></button>
         </p>
 	</div>	
     <div class="logo"><a href="javascript:velika.gotoPage('home');"></a></div>

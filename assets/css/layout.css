@@ -128,9 +128,16 @@ article .cnt{
 }
 
 #menu-wrap .sound{display: block; position: absolute; right: 20px; bottom: 13px; font-weight: 100;}
-#menu-wrap .sound button{background: none; border: none; cursor: pointer; font-family: 'Open Sans', sans-serif; display: block; opacity: 1 !important}
-#menu-wrap .sound button span{font-family: 'FontAwesome'; font-size: 14px; display: inline-block; margin-right: 5px; vertical-align: middle;}
+#menu-wrap .sound button{background: none; border: none; cursor: pointer; font-family: 'Open Sans', sans-serif; display: block; opacity: 1 !important; color: #cdc66a;}
+#menu-wrap .sound button span{font-family: 'FontAwesome'; font-size: 14px; display: inline-block; margin-right: 5px; width: 20px; text-align: right; height: 20px; line-height: 20px; vertical-align: middle;}
 #menu-wrap .sound button.on{display: none;}
+#menu-wrap .sound button em{font-style: normal;}
+
+@media only screen and (max-width: 799px){
+#menu-wrap .sound{display: block; position: absolute;right: 0; top: 10px;}
+    #menu-wrap .sound button span{font-size: 14px; text-align: center; width: 20px; height: 20px; outline: 1px solid #cdc66a; color: #cdc66a;}
+    #menu-wrap .sound em{display: none;}
+}
 
 .logo a{
 	position:absolute;
@@ -192,7 +199,7 @@ article .cnt{
 	transition: all 0.6s;
 }
 .collapse-button:hover, .collapse-button:focus {
-    background-color: #040404;
+    background-color: #cdc66a;
     color: #FFF;
 }
 .collapse-button .icon-bar {
@@ -832,7 +839,7 @@ transform: rotate(3deg) scale(1.2) skew(0deg) translate(0px);
 	position:relative;
 	width:100%;
 }
-.container .services-offers .eight.columns{margin: 0; width: 480px;}
+.container .services-offers .eight.columns{margin: 0; max-width: 480px;}
 
 
 .services-offers .sub_text{padding-top: 20px; text-align: right;}
@@ -908,6 +915,27 @@ width: 100%;
 }
 #owl-family img:hover{
 	opacity:1;
+}
+
+@media only screen and (min-width: 767px)and (max-width: 1023px){
+.services-offers .eight.columns.text_box{ width: 50%;}
+.services-offers .eight.columns.img_box{width: 50%;}
+
+}
+
+@media only screen and (max-width: 767px){
+.services-offers .eight.columns.text_box{ width: 100%; padding-bottom: 0;}
+.services-offers .eight.columns.img_box{width: 100%;}
+
+    .services-offers h5{text-align: center; padding-top: 10px;}
+.services-offers .sub_text{padding-top: 20px; text-align:center; font-size: 14px;}
+.services-offers .text_box{float:none; padding: 30px; box-sizing: border-box;}
+.services-offers .img_box{float:none;}
+
+.services-offers.right .text_box{float: none;}
+.services-offers.right .img_box{float: none;}
+.services-offers.right h5{text-align:center;}
+.services-offers.right  .sub_text{text-align:center;}
 }
 
 
@@ -1295,7 +1323,8 @@ text-transform: uppercase;
 .footer .logo {color: #fff; font-size: 30px; font-family:'Playfair Display', 'Nanum Myeongjo', serif; font-style: italic;}
 .footer .logo img{ width: 120px;}
 .footer .company_info{margin-top: 10px;}
-.footer .company_info .space{color: #fff; display: inline-block; margin-right: 20px;}
+.footer .company_info p{line-height: 120%;}
+.footer .company_info .space{color: #fff; display: inline-block; margin-right: 20px; line-height: 120%;}
 .footer .company_info .copy{font-size: 12px;}
 .footer .call{font-size: 30px; font-weight: 700;}
 .footer .sns{margin-top: 10px;}
