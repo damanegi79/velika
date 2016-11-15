@@ -8,6 +8,7 @@
         var oldPage = "";
         var firstFlag = true;
         var footer = null;
+        var currentUrl = "";
 
         function loadFooter()
         {
@@ -25,32 +26,53 @@
             $.get("/html/"+url+".html?"+(Math.random()*999999999), function ( data )
             {
                 var page = $(data);
-
-                if(url != "home")
-                {
-                    page.append(footer);    
-                }
-
                 if(firstFlag)
                 {
                     $("#content").append(page);
+                    if(velika[url]) velika[url].init();
                     firstFlag = false;
+                    oldPage = currentPage;
+                    if(url != "home")
+                    {
+                        page.append(footer);    
+                    }
                 }
                 else
                 {
                     var outPage = $("#content>article");
-                    var oldUrl = oldPage.replace("#", "");
-                    if(velika[oldUrl]) velika[oldUrl].dispos();
-                    outPage.remove();
+                    var arrow = getMotionArrow(url);
+                    TweenMax.to(outPage, 0.8, {x:-($(window).width()*0.3)*arrow, ease:Cubic.easeInOut, onComplete:motionEnd});
+                    TweenMax.to(page, 0, {x:$(window).width()*arrow, opacity:0});
+                    TweenMax.to(page, 0.8, {x:0, opacity:1, ease:Cubic.easeInOut});
                     $("#content").append(page);
+                    if(url != "home")
+                    {
+                        page.append(footer.clone());    
+                    }
+                    
+                    function motionEnd()
+                    {
+                        if(url != "home") velika[url].init();
+                        var oldUrl = oldPage.replace("#", "");
+                        outPage.remove();
+                        oldPage = currentPage;
+                        if(velika[oldUrl]) velika[oldUrl].dispos();
+                        
+                    }
+                    if(url=="home") setTimeout(function (){velika[url].init();}, 100);
+                    
                 }
-
-                if(velika[url]) velika[url].init();
-
+                currentUrl = url;
                 
-
-                oldPage = currentPage;
             });
+        }
+
+        function getMotionArrow( url )
+        {
+            var prevIdx = pageAr.indexOf(currentUrl);
+            var nextIdx = pageAr.indexOf(url);
+            if(prevIdx < nextIdx) return 1;
+            else                  return -1;
         }
         
         
@@ -121,7 +143,6 @@
             
             gotoPage : function ( id )
             {
-                //console.log("!!!"+id);
                 location.href = "#"+id;
             },
 
@@ -393,14 +414,7 @@
                 });
  
                 $("#owl-family").owlCarousel({
-
-                    itemsCustom : [
-                        [0, 2],
-                        [450, 2],
-                        [600, 3],
-                        [700, 4],
-                        [900, 7]
-                    ],
+                    itemsCustom : [[0, 2],[450, 2],[600, 3],[700, 4],[900, 7]],
                     navigation : false
                 });
             },
@@ -494,11 +508,11 @@
             });
 
             var infowindow = new google.maps.InfoWindow({
-                maxWidth: markerMaxWidth
+                maxWidth: 300
             });
 
             google.maps.event.addListener(marker, 'click', function() {
-                infowindow.open(map, marker);
+                //infowindow.open(map, marker);
             });
         }
 

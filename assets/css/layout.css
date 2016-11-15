@@ -73,7 +73,8 @@ article{
 	top:0;
 	z-index:2;
 	opacity:1;
-	background-color:#fff
+	background-color:#fff;
+	min-height:100%
 }
 
 article i{
