@@ -1705,4 +1705,31 @@ h1 { font-size: 38px; line-height:38px;}
 .pagination li.active a{background-color:#cdc66a;color:#fff;border:solid 1px #cdc66a}
 
 
+.mail-form{position:relative}
+.mail-form ul{list-style: none;overflow:hidden;padding:0;display:table;width:100%}
+.mail-form li{display:table-row;text-align:left}
+.mail-form li span{border-bottom:solid 1px #d7d3d1;padding:10px;display:table-cell;vertical-align:middle;box-sizing:border-box;min-height:60px}
+.mail-form li:first-child span{border-top:solid 1px #d7d3d1}
+.mail-form li .tit{width:15%;font-weight:bold;}
+.mail-form li .con{width:80%}
+.mail-form li input[type='text']{width:100%;border:solid 1px #d7d3d1;padding-left:10px;padding-right:10px;margin:0;box-sizing:border-box}
+.mail-form li textarea{width:100%;border:solid 1px #d7d3d1;box-sizing:border-box}
+.mail-form li input[type='radio']{display:inline;width:auto}
+.mail-form li label{display:inline}
+.mail-form textarea{height:200px}
+.mail-form .btn{background:#cdc66a;border:none;padding:15px 50px;color:#fff;font-weight:bold;margin: 20px auto 0 auto;cursor:pointer;border-radius:5px}
+.mail-form .btn:hover{background:#bdb764}
+
+
+@media (max-width: 990px){
+   .mail-form ul{border-bottom:solid 1px #d7d3d1}
+   .mail-form li .tit{width:100%;border-bottom:none;border-top:solid 1px #d7d3d1;min-height:0;display:block;padding-bottom:0}
+   .mail-form li .con{width:100%;display:block;border-bottom:none}
+   .mail-form li span{padding-left:0;padding-right:0;min-height:auto} 
+   .mail-form li:first-child .con{border-top:none}
+}
+
+
+
+
 

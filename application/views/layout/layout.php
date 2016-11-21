@@ -112,6 +112,7 @@
 <script type="text/javascript" src="/assets/js/jquery.easing.js"></script> 
 <script type="text/javascript" src="/assets/js/jquery.transit.min.js"></script>
 <script type="text/javascript" src="/assets/js/jquery.tmpl.min.js"></script>
+<script type="text/javascript" src="/assets/js/jquery.validate.min.js"></script>
 <script type="text/javascript" src="/assets/js/imagesloaded.pkgd.min.js"></script>
 <script src="https://unpkg.com/masonry-layout@4.1/dist/masonry.pkgd.min.js"></script>
 <script type="text/javascript" src="/assets/js/touchSwipe.js"></script> 

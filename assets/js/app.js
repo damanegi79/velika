@@ -1,5 +1,39 @@
 (function ($){
 
+    $.validator.setDefaults({
+        onkeyup:false,
+        onclick:false,
+        onfocusout:false,
+        showErrors:function(errorMap, errorList)
+        {
+            if(this.numberOfInvalids()) 
+            { 
+                alert(errorList[0].message);
+                $(errorList[0].element).focus();
+            }
+        }
+    });
+
+    $.extend($.validator.messages, 
+    {
+        required: "반드시 입력해야 합니다.",
+        remote: "수정 바랍니다.",
+        email: "이메일 주소를 올바로 입력하세요.",
+        url: "URL을 올바로 입력하세요.",
+        date: "날짜가 잘못 입력됐습니다.",
+        dateISO: "ISO 형식에 맞는 날짜로 입력하세요.",
+        number: "숫자만 입력하세요.",
+        digits: "숫자(digits)만 입력하세요.",
+        creditcard: "올바른 신용카드 번호를 입력하세요.",
+        equalTo: "값이 서로 다릅니다.",
+        accept: "승낙해 주세요.",
+        maxlength: jQuery.validator.format("{0}글자 이상은 입력할 수 없습니다."),
+        minlength: jQuery.validator.format("적어도 {0}글자는 입력해야 합니다."),
+        rangelength: jQuery.validator.format("{0}글자 이상 {1}글자 이하로 입력해 주세요."),
+        range: jQuery.validator.format("{0}에서 {1} 사이의 값을 입력하세요."),
+        max: jQuery.validator.format("{0} 이하로 입력해 주세요."),
+        min: jQuery.validator.format("{0} 이상으로 입력해 주세요.")
+    });
 
     var velika = velika || function ()
     {
@@ -539,7 +573,26 @@
 
             init : function ()
             {
-
+                $("#mailForm").validate({
+                    rules:{
+                        qna_title:"required",
+                        qna_name:"required",
+                        qna_email:{required: true, email: true},
+                        qna_phone:"required",
+                        qna_desc:"required"
+                    },
+                    messages: {
+                        qna_title : "제목을 입력해 주세요.",
+                        qna_name : "이름을 입력해 주세요.",
+                        qna_email: "형식에 맞는 이메일을 입력해 주세요.",
+                        qna_phone:"연락처를 입력해 주세요.",
+                        qna_desc:"내용을 입력해 주세요."
+                    },
+                    submitHandler: function(form) 
+                    {
+                        $("#mailForm").submit();
+                    }
+                });
             },
 
             dispos : function ()
